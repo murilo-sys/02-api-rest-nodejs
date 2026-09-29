@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm dlx tsx watch src/server.js",
+    "dev": "pnpm exec tsx watch src/server.js",
+    "knex": "node --import tsx ./node_modules/knex/bin/cli.js",
     "lint": "eslint src --ext .ts --fix"
   },
   "keywords": [],

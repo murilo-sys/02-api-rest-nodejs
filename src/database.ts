@@ -1,4 +1,9 @@
+import "dotenv/config";
 import setupKnex, { type Knex } from "knex";
+
+if (!process.env.DATABASE_URL) {
+  throw new Error("Database .env not found");
+}
 
 export const config: Knex.Config = {
   client: "sqlite",
@@ -8,7 +13,7 @@ export const config: Knex.Config = {
   useNullAsDefault: true,
   migrations: {
     extension: "ts",
-    directory: "./db/migrations"
+    directory: process.env.DATABASE_URL
   }
 };
 

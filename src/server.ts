@@ -1,6 +1,7 @@
 import fastify from "fastify";
 import { transactionRoutes } from "./routes/transactions";
 import { env } from "./env";
+import cookie from "@fastify/cookie";
 
 const app = fastify();
 
@@ -8,6 +9,7 @@ const app = fastify();
 
 // http:
 
+app.register(cookie);
 app.register(transactionRoutes, { prefix: "transaction" });
 
 app

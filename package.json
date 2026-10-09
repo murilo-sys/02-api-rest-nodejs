@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "pnpm exec tsx watch src/server.js",
     "knex": "node --import tsx ./node_modules/knex/bin/cli.js",
-    "lint": "eslint src --ext .ts --fix"
+    "lint": "eslint src --ext .ts --fix",
+    "test": "pnpm exec vitest"
   },
   "keywords": [],
   "author": "",
@@ -22,11 +23,14 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/node": "^26.6.2",
+    "@types/supertest": "^7.2.1",
     "@typescript/native": "npm:typescript@^7.0.2",
     "eslint": "^10.11.0",
+    "supertest": "^7.3.1",
     "tsx": "^4.23.15",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "typescript-eslint": "^8.70.1"
+    "typescript-eslint": "^8.70.1",
+    "vitest": "^5.0.3"
   },
   "dependencies": {
     "@fastify/cookie": "^11.1.2",
